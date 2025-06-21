@@ -1,0 +1,23 @@
+public class Livro {
+	String titulo;
+	boolean emprestado;
+	public void emprestar() {
+		emprestado = true;
+	}
+
+	public String status() {
+		if (emprestado) {
+			return "Indisponível";
+		}
+		return "Disponível";
+	}
+}
+class TestaLivro {
+	public static void main(String[] args) {
+		Livro l1 = new Livro();
+		l1.titulo = "Java para Iniciantes";
+		System.out.println(l1.status());
+		l1.emprestar();
+		System.out.println(l1.status());
+	}
+}
